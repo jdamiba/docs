@@ -1,5 +1,8 @@
 ---
 title: ""
+head:
+  - tag: title
+    content: Python SDK Reference | Sandbox | Daytona
 ---
 
 ## Sandbox
@@ -49,7 +52,6 @@ Gets structured information about the Sandbox.
 - `SandboxInfo` - Detailed information about the Sandbox including its
   configuration, resources, and current state.
   
-
 **Example**:
 
 ```python
@@ -72,7 +74,6 @@ Gets the root directory path for the logged in user inside the Sandbox.
 
 - `str` - The absolute path to the Sandbox root directory for the logged in user.
   
-
 **Example**:
 
 ```python
@@ -97,12 +98,10 @@ diagnostics, and more.
 - `language_id` _LspLanguageId_ - The language server type (e.g., LspLanguageId.PYTHON).
 - `path_to_project` _str_ - Absolute path to the project root directory.
   
-
 **Returns**:
 
 - `LspServer` - A new LSP server instance configured for the specified language.
   
-
 **Example**:
 
 ```python
@@ -124,12 +123,10 @@ Labels are key-value pairs that can be used to organize and identify Sandboxes.
 
 - `labels` _Dict[str, str]_ - Dictionary of key-value pairs representing Sandbox labels.
   
-
 **Returns**:
 
   Dict[str, str]: Dictionary containing the updated Sandbox labels.
   
-
 **Example**:
 
 ```python
@@ -157,12 +154,10 @@ Starts the Sandbox and waits for it to be ready.
 
 - `timeout` _Optional[float]_ - Maximum time to wait in seconds. 0 means no timeout. Default is 60 seconds.
   
-
 **Raises**:
 
 - `DaytonaError` - If timeout is negative. If sandbox fails to start or times out.
   
-
 **Example**:
 
 ```python
@@ -187,12 +182,10 @@ Stops the Sandbox and waits for it to be fully stopped.
 
 - `timeout` _Optional[float]_ - Maximum time to wait in seconds. 0 means no timeout. Default is 60 seconds.
   
-
 **Raises**:
 
 - `DaytonaError` - If timeout is negative; If sandbox fails to stop or times out
   
-
 **Example**:
 
 ```python
@@ -217,7 +210,6 @@ reaches the 'started' state, encounters an error or times out.
 
 - `timeout` _Optional[float]_ - Maximum time to wait in seconds. 0 means no timeout. Default is 60 seconds.
   
-
 **Raises**:
 
 - `DaytonaError` - If timeout is negative; If Sandbox fails to start or times out
@@ -240,7 +232,6 @@ reaches the 'started' state, encounters an error or times out.
 
 - `timeout` _Optional[float]_ - Maximum time to wait in seconds. 0 means no timeout. Default is 60 seconds.
   
-
 **Raises**:
 
 - `DaytonaError` - If timeout is negative; If Sandbox fails to start or times out
@@ -262,7 +253,6 @@ for the Sandbox to stop.
 
 - `timeout` _Optional[float]_ - Maximum time to wait in seconds. 0 means no timeout. Default is 60 seconds.
   
-
 **Raises**:
 
 - `DaytonaError` - If timeout is negative. If Sandbox fails to stop or times out.
@@ -286,7 +276,6 @@ for the Sandbox to stop.
 
 - `timeout` _Optional[float]_ - Maximum time to wait in seconds. 0 means no timeout. Default is 60 seconds.
   
-
 **Raises**:
 
 - `DaytonaError` - If timeout is negative. If Sandbox fails to stop or times out.
@@ -309,12 +298,10 @@ Interactions using Sandbox Previews are not included.
 - `interval` _int_ - Number of minutes of inactivity before auto-stopping.
   Set to 0 to disable auto-stop. Defaults to 15.
   
-
 **Raises**:
 
 - `DaytonaError` - If interval is negative
   
-
 **Example**:
 
 ```python
@@ -338,7 +325,6 @@ it will open it and return the link.
 
 - `port` _int_ - The port to open the preview link on
   
-
 **Returns**:
 
   The preview link for the sandbox at the specified port
@@ -369,11 +355,9 @@ Converts an API Sandbox instance to a SandboxInfo object.
 
 - `instance` _ApiSandbox_ - The API Sandbox instance to convert
   
-
 **Returns**:
 
 - `SandboxInfo` - The converted SandboxInfo object
-
 
 ## SandboxTargetRegion
 
@@ -405,7 +389,6 @@ Resources allocated to a Sandbox.
 - `memory` _str_ - Amount of memory allocated with unit (e.g., "2Gi", "4Gi").
 - `disk` _str_ - Amount of disk space allocated with unit (e.g., "10Gi", "20Gi").
   
-
 **Example**:
 
 ```python
@@ -441,7 +424,6 @@ Structured information about a Sandbox.
 - `snapshot_state` _Optional[str]_ - Current state of Sandbox snapshot.
 - `snapshot_state_created_at` _Optional[datetime]_ - When the snapshot state was created.
   
-
 **Example**:
 
 ```python
@@ -458,4 +440,3 @@ class SandboxInstance(ApiSandbox)
 ```
 
 Represents a Daytona Sandbox instance.
-
